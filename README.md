@@ -2,7 +2,7 @@
 By Daniel Gilbert
 
 ## Summary
-A port scanner.
+A port scanner written to help accomplish my goal of becoming proficient in programming C.
 
 ## Notes
 The idea for this software was conceived on Thursday, January 19, 2023 at approximately 9:00 PM (PST).
