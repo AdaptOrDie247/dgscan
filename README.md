@@ -1,8 +1,8 @@
-# port-scanner
+# dg-scan
 By Daniel Gilbert
 
 ## Summary
-A port scanner written to help me become proficient in C.
+A port scanner written in C.
 
 ## Notes
 The idea for this software was conceived on Thursday, January 19, 2023 at approximately 9:00 PM PST.
