@@ -1,3 +1,4 @@
+#include "banner.h"
 #include "program.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,16 +19,18 @@ char* Program_getVersion(struct Program* program) {
   return program->version;
 }
 void Program_printBanner(struct Program* program) {
-  printf("%s\n", program->name);
-  printf("Version: %s\n", program->version);
-  printf("Author: %s\n", program->author);
+  struct Banner* banner = Banner_construct(program);
+  char* string = Banner_getString(banner);
+  printf("%s", string);
+  free(string);
+  Banner_destruct(banner);
 }
 void Program_setAuthor(struct Program* program, char* author) {
-  strcpy_s(program->author, sizeof(program->author), author);
+  strcpy_s(program->author, sizeof program->author, author);
 }
 void Program_setName(struct Program* program, char* name) {
-  strcpy_s(program->name, sizeof(program->name), name);
+  strcpy_s(program->name, sizeof program->name, name);
 }
 void Program_setVersion(struct Program* program, char* version) {
-  strcpy_s(program->version, sizeof(program->version), version);
+  strcpy_s(program->version, sizeof program->version, version);
 }
