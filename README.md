@@ -1,4 +1,4 @@
-# dg-scan
+# DG Scan
 By Daniel Gilbert
 
 ## Summary
