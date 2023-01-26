@@ -5,9 +5,9 @@
 #include <string.h>
 struct Banner* Banner_construct(struct Program* program) {
   struct Banner* banner = malloc(sizeof(struct Banner));
-  snprintf(banner->name_line, sizeof banner->name_line, "%s\n", Program_getName(program));
-  snprintf(banner->version_line, sizeof banner->version_line, "Version: %s\n", Program_getVersion(program));
-  snprintf(banner->author_line, sizeof banner->author_line, "Author: %s\n", Program_getAuthor(program));
+  snprintf(banner->name_line, sizeof banner->name_line, "%s\n", (program->getName)(program));
+  snprintf(banner->version_line, sizeof banner->version_line, "Version: %s\n", (program->getVersion)(program));
+  snprintf(banner->author_line, sizeof banner->author_line, "Author: %s\n", (program->getAuthor)(program));
   return banner;
 }
 void Banner_destruct(struct Banner* banner) {

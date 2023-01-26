@@ -4,9 +4,15 @@ struct Program {
   char name[50];
   char version[20];
   char author[40];
+  char* (*getAuthor)(void* self);
+  char* (*getName)(void* self);
+  char* (*getVersion)(void* self);
+  void (*printBanner)(void* self);
+  void (*setAuthor)(void* self, char* author);
+  void (*setName)(void* self, char* name);
+  void (*setVersion)(void* self, char* version);
 };
-struct Program* Program_construct();
-void Program_destruct(struct Program* program);
+int Program_init(struct Program* program);
 char* Program_getAuthor(struct Program* program);
 char* Program_getName(struct Program* program);
 char* Program_getVersion(struct Program* program);

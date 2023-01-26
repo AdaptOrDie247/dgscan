@@ -3,11 +3,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-struct Program* Program_construct() {
-  return malloc(sizeof(struct Program));
-}
-void Program_destruct(struct Program* program) {
-  free(program);
+int Program_init(struct Program* program) {
+  program->getAuthor = &Program_getAuthor;
+  program->getName = &Program_getName;
+  program->getVersion = &Program_getVersion;
+  program->printBanner = &Program_printBanner;
+  program->setAuthor = &Program_setAuthor;
+  program->setName = &Program_setName;
+  program->setVersion = &Program_setVersion;
+  return 0;
 }
 char* Program_getAuthor(struct Program* program) {
   return program->author;
