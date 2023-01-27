@@ -1,4 +1,3 @@
-#include "dg-scan.h"
 #include "program.h"
 #include <stdio.h>
 #include <stdlib.h>
