@@ -8,15 +8,15 @@
 #define PROGRAM_AUTHOR "Daniel Gilbert"
 int main(void) {
   Program dg_scan;
-  Program_init(&dg_scan);
-  Main_printBanner(&dg_scan);
+  Main_initProgram(&dg_scan);
+  dg_scan.printBanner(&dg_scan);
   dg_scan.printUsage(&dg_scan);
   return 0;
 }
-void Main_printBanner(Program* program) {
+void Main_initProgram(Program* program) {
+  Program_init(program);
   program->setName(program, PROGRAM_NAME);
   program->setBinaryName(program, PROGRAM_BINARY_NAME);
   program->setVersion(program, PROGRAM_VERSION);
   program->setAuthor(program, PROGRAM_AUTHOR);
-  program->printBanner(program);
 }
