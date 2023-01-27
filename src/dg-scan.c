@@ -5,7 +5,7 @@
 #define PROGRAM_NAME "DG Scan"
 #define PROGRAM_VERSION "1.0"
 #define PROGRAM_AUTHOR "Daniel Gilbert"
-int main() {
+int main(void) {
   struct Program dg_scan;
   Program_init(&dg_scan);
   Main_printBanner(&dg_scan);
