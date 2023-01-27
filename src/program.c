@@ -27,7 +27,7 @@ char* Program_getVersion(Program* self) {
   return self->version;
 }
 void Program_printBanner(Program* self) {
-  struct Banner banner;
+  Banner banner;
   Banner_init(&banner, self);
   char* string = banner.getString(&banner);
   printf("%s", string);
