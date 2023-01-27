@@ -2,7 +2,7 @@
 #define BANNER
 #include "program.h"
 #define BANNER_LINE_SIZE 80
-#define BANNER_LINE_COUNT 3
+#define BANNER_LINE_COUNT 5
 typedef struct Banner {
   char name_line[BANNER_LINE_SIZE];
   char version_line[BANNER_LINE_SIZE];

@@ -15,9 +15,11 @@ void Banner_init(Banner* self, Program* program) {
 char* Banner_getString(Banner* self) {
   int string_size = BANNER_LINE_SIZE * BANNER_LINE_COUNT;
   char* string = malloc(string_size);
-  strncpy_s(string, string_size, self->name_line, BANNER_LINE_SIZE);
+  strncpy_s(string, string_size, "\n", BANNER_LINE_SIZE);
+  strncat_s(string, string_size, self->name_line, BANNER_LINE_SIZE);
   strncat_s(string, string_size, self->version_line, BANNER_LINE_SIZE);
   strncat_s(string, string_size, self->author_line, BANNER_LINE_SIZE);
+  strncat_s(string, string_size, "\n", BANNER_LINE_SIZE);
   return string;
 }
 void Banner_setAuthorLine(Banner* self, char* author) {
