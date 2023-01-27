@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-void Banner_init(struct Banner* self, struct Program* program) {
+void Banner_init(struct Banner* self, Program* program) {
   self->getString = &Banner_getString;
   self->setAuthorLine = &Banner_setAuthorLine;
   self->setNameLine = &Banner_setNameLine;
