@@ -5,15 +5,20 @@
 #include <string.h>
 void Program_init(struct Program* self) {
   self->getAuthor = &Program_getAuthor;
+  self->getBinaryName = &Program_getBinaryName;
   self->getName = &Program_getName;
   self->getVersion = &Program_getVersion;
   self->printBanner = &Program_printBanner;
   self->setAuthor = &Program_setAuthor;
+  self->setBinaryName = &Program_setBinaryName;
   self->setName = &Program_setName;
   self->setVersion = &Program_setVersion;
 }
 char* Program_getAuthor(struct Program* self) {
   return self->author;
+}
+char* Program_getBinaryName(struct Program* self) {
+  return self->binary_name;
 }
 char* Program_getName(struct Program* self) {
   return self->name;
@@ -30,6 +35,9 @@ void Program_printBanner(struct Program* self) {
 }
 void Program_setAuthor(struct Program* self, char* author) {
   strcpy_s(self->author, sizeof self->author, author);
+}
+void Program_setBinaryName(struct Program* self, char* binary_name) {
+  strcpy_s(self->binary_name, sizeof self->binary_name, binary_name);
 }
 void Program_setName(struct Program* self, char* name) {
   strcpy_s(self->name, sizeof self->name, name);

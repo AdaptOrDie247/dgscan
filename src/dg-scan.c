@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define PROGRAM_NAME "DG Scan"
+#define PROGRAM_BINARY_NAME "dg-scan"
 #define PROGRAM_VERSION "1.0"
 #define PROGRAM_AUTHOR "Daniel Gilbert"
 int main(void) {
@@ -13,6 +14,7 @@ int main(void) {
 }
 void Main_printBanner(struct Program* program) {
   program->setName(program, PROGRAM_NAME);
+  program->setBinaryName(program, PROGRAM_BINARY_NAME);
   program->setVersion(program, PROGRAM_VERSION);
   program->setAuthor(program, PROGRAM_AUTHOR);
   program->printBanner(program);
