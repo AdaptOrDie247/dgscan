@@ -3,30 +3,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-struct Banner* Banner_construct(struct Program* program) {
-  struct Banner* banner = malloc(sizeof(struct Banner));
-  snprintf(banner->name_line, sizeof banner->name_line, "%s\n", (program->getName)(program));
-  snprintf(banner->version_line, sizeof banner->version_line, "Version: %s\n", (program->getVersion)(program));
-  snprintf(banner->author_line, sizeof banner->author_line, "Author: %s\n", (program->getAuthor)(program));
-  return banner;
+int Banner_init(struct Banner* self, struct Program* program) {
+  self->getString = &Banner_getString;
+  self->setAuthorLine = &Banner_setAuthorLine;
+  self->setNameLine = &Banner_setNameLine;
+  self->setVersionLine = &Banner_setVersionLine;
+  self->setNameLine(self, program->getName(program));
+  self->setVersionLine(self, program->getVersion(program));
+  self->setAuthorLine(self, program->getAuthor(program));
+  return 0;
 }
-void Banner_destruct(struct Banner* banner) {
-  free(banner);
-}
-char* Banner_getAuthorLine(struct Banner* banner) {
-  return banner->author_line;
-}
-char* Banner_getNameLine(struct Banner* banner) {
-  return banner->name_line;
-}
-char* Banner_getString(struct Banner* banner) {
+char* Banner_getString(struct Banner* self) {
   int string_size = BANNER_LINE_SIZE * BANNER_LINE_COUNT;
   char* string = malloc(string_size);
-  strncpy_s(string, string_size, Banner_getNameLine(banner), BANNER_LINE_SIZE);
-  strncat_s(string, string_size, Banner_getVersionLine(banner), BANNER_LINE_SIZE);
-  strncat_s(string, string_size, Banner_getAuthorLine(banner), BANNER_LINE_SIZE);
+  strncpy_s(string, string_size, self->name_line, BANNER_LINE_SIZE);
+  strncat_s(string, string_size, self->version_line, BANNER_LINE_SIZE);
+  strncat_s(string, string_size, self->author_line, BANNER_LINE_SIZE);
   return string;
 }
-char* Banner_getVersionLine(struct Banner* banner) {
-  return banner->version_line;
+void Banner_setAuthorLine(struct Banner* self, char* author) {
+  snprintf(self->author_line, sizeof self->author_line, "Author: %s\n", author);
+}
+void Banner_setNameLine(struct Banner* self, char* name) {
+  snprintf(self->name_line, sizeof self->name_line, "%s\n", name);
+}
+void Banner_setVersionLine(struct Banner* self, char* version) {
+  snprintf(self->version_line, sizeof self->version_line, "Version: %s\n", version);
 }

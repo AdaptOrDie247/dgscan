@@ -23,11 +23,11 @@ char* Program_getVersion(struct Program* program) {
   return program->version;
 }
 void Program_printBanner(struct Program* program) {
-  struct Banner* banner = Banner_construct(program);
-  char* string = Banner_getString(banner);
+  struct Banner banner;
+  Banner_init(&banner, program);
+  char* string = banner.getString(&banner);
   printf("%s", string);
   free(string);
-  Banner_destruct(banner);
 }
 void Program_setAuthor(struct Program* program, char* author) {
   strcpy_s(program->author, sizeof program->author, author);
