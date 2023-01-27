@@ -12,7 +12,7 @@ struct Program {
   void (*setName)(void* self, char* name);
   void (*setVersion)(void* self, char* version);
 };
-int Program_init(struct Program* self);
+void Program_init(struct Program* self);
 char* Program_getAuthor(struct Program* self);
 char* Program_getName(struct Program* self);
 char* Program_getVersion(struct Program* self);

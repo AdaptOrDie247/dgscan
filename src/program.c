@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int Program_init(struct Program* self) {
+void Program_init(struct Program* self) {
   self->getAuthor = &Program_getAuthor;
   self->getName = &Program_getName;
   self->getVersion = &Program_getVersion;
@@ -11,7 +11,6 @@ int Program_init(struct Program* self) {
   self->setAuthor = &Program_setAuthor;
   self->setName = &Program_setName;
   self->setVersion = &Program_setVersion;
-  return 0;
 }
 char* Program_getAuthor(struct Program* self) {
   return self->author;
