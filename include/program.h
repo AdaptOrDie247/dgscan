@@ -10,6 +10,7 @@ typedef struct Program {
   char* (*getName)(void* self);
   char* (*getVersion)(void* self);
   void (*printBanner)(void* self);
+  void (*printUsage)(void* self);
   void (*setAuthor)(void* self, char* author);
   void (*setBinaryName)(void* self, char* binary_name);
   void (*setName)(void* self, char* name);
@@ -21,6 +22,7 @@ char* Program_getBinaryName(Program* self);
 char* Program_getName(Program* self);
 char* Program_getVersion(Program* self);
 void Program_printBanner(Program* self);
+void Program_printUsage(Program* self);
 void Program_setAuthor(Program* self, char* author);
 void Program_setBinaryName(Program* self, char* binary_name);
 void Program_setName(Program* self, char* name);

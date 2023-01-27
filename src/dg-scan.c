@@ -10,6 +10,7 @@ int main(void) {
   Program dg_scan;
   Program_init(&dg_scan);
   Main_printBanner(&dg_scan);
+  dg_scan.printUsage(&dg_scan);
   return 0;
 }
 void Main_printBanner(Program* program) {

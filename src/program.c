@@ -9,6 +9,7 @@ void Program_init(Program* self) {
   self->getName = &Program_getName;
   self->getVersion = &Program_getVersion;
   self->printBanner = &Program_printBanner;
+  self->printUsage = &Program_printUsage;
   self->setAuthor = &Program_setAuthor;
   self->setBinaryName = &Program_setBinaryName;
   self->setName = &Program_setName;
@@ -32,6 +33,9 @@ void Program_printBanner(Program* self) {
   char* string = banner.getString(&banner);
   printf("%s", string);
   free(string);
+}
+void Program_printUsage(Program* self) {
+  printf("%s TARGET_IP", self->binary_name);
 }
 void Program_setAuthor(Program* self, char* author) {
   strcpy_s(self->author, sizeof self->author, author);
