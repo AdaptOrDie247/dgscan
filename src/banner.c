@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int Banner_init(struct Banner* self, struct Program* program) {
+void Banner_init(struct Banner* self, struct Program* program) {
   self->getString = &Banner_getString;
   self->setAuthorLine = &Banner_setAuthorLine;
   self->setNameLine = &Banner_setNameLine;
@@ -11,7 +11,6 @@ int Banner_init(struct Banner* self, struct Program* program) {
   self->setNameLine(self, program->getName(program));
   self->setVersionLine(self, program->getVersion(program));
   self->setAuthorLine(self, program->getAuthor(program));
-  return 0;
 }
 char* Banner_getString(struct Banner* self) {
   int string_size = BANNER_LINE_SIZE * BANNER_LINE_COUNT;
