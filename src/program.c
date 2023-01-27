@@ -35,7 +35,7 @@ void Program_printBanner(Program* self) {
   free(string);
 }
 void Program_printUsage(Program* self) {
-  printf("%s TARGET_IP", self->binary_name);
+  printf("%s TARGET_IP\n\n", self->binary_name);
 }
 void Program_setAuthor(Program* self, char* author) {
   strcpy_s(self->author, sizeof self->author, author);
