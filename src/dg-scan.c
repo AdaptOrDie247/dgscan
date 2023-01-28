@@ -1,5 +1,5 @@
-#include "dg-scan.h"
-#include "program.h"
+#include "../include/dg-scan.h"
+#include "../include/program.h"
 #include <stdio.h>
 #include <stdlib.h>
 #define PROGRAM_AUTHOR "Daniel Gilbert"

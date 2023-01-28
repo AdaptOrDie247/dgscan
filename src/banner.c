@@ -1,5 +1,5 @@
-#include "banner.h"
-#include "program.h"
+#include "../include/banner.h"
+#include "../include/program.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
