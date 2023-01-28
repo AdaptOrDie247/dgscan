@@ -1,6 +1,6 @@
 #ifndef PROGRAM
 #define PROGRAM
-typedef struct Program {
+typedef struct {
   char author[40];
   char binary_name[20];
   char name[50];
