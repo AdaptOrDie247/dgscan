@@ -16,7 +16,9 @@ typedef struct {
   void (*setName)(void* self, char* name);
   void (*setVersion)(void* self, char* version);
 } Program;
+Program* Program_create();
 void Program_init(Program* self);
+void Program_destroy(Program* program);
 char* Program_getAuthor(Program* self);
 char* Program_getBinaryName(Program* self);
 char* Program_getName(Program* self);

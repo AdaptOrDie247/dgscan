@@ -3,6 +3,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+Program* Program_create() {
+  Program* program = (Program*) malloc(sizeof(Program));
+  Program_init(program);
+  return program;
+}
 void Program_init(Program* self) {
   self->getAuthor = &Program_getAuthor;
   self->getBinaryName = &Program_getBinaryName;
@@ -14,6 +19,13 @@ void Program_init(Program* self) {
   self->setBinaryName = &Program_setBinaryName;
   self->setName = &Program_setName;
   self->setVersion = &Program_setVersion;
+}
+void Program_destroy(Program* program) {
+  if (program) {
+    // Could call a void Program_reset(Program* self)
+    // function here to unset vars used by the object.
+    free(program);
+  }
 }
 char* Program_getAuthor(Program* self) {
   return self->author;
