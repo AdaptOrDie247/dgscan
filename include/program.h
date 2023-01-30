@@ -17,7 +17,7 @@ typedef struct {
   void (*setVersion)(void* self, char* version);
 } Program;
 Program* Program_create();
-void Program_init(Program* self);
+void Program_init(Program* program);
 void Program_destroy(Program* program);
 char* Program_getAuthor(Program* self);
 char* Program_getBinaryName(Program* self);

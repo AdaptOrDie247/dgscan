@@ -8,17 +8,17 @@ Program* Program_create() {
   Program_init(program);
   return program;
 }
-void Program_init(Program* self) {
-  self->getAuthor = &Program_getAuthor;
-  self->getBinaryName = &Program_getBinaryName;
-  self->getName = &Program_getName;
-  self->getVersion = &Program_getVersion;
-  self->printBanner = &Program_printBanner;
-  self->printUsage = &Program_printUsage;
-  self->setAuthor = &Program_setAuthor;
-  self->setBinaryName = &Program_setBinaryName;
-  self->setName = &Program_setName;
-  self->setVersion = &Program_setVersion;
+void Program_init(Program* program) {
+  program->getAuthor = &Program_getAuthor;
+  program->getBinaryName = &Program_getBinaryName;
+  program->getName = &Program_getName;
+  program->getVersion = &Program_getVersion;
+  program->printBanner = &Program_printBanner;
+  program->printUsage = &Program_printUsage;
+  program->setAuthor = &Program_setAuthor;
+  program->setBinaryName = &Program_setBinaryName;
+  program->setName = &Program_setName;
+  program->setVersion = &Program_setVersion;
 }
 void Program_destroy(Program* program) {
   if (program) {
