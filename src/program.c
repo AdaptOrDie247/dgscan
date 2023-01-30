@@ -40,11 +40,11 @@ char* Program_getVersion(Program* self) {
   return self->version;
 }
 void Program_printBanner(Program* self) {
-  Banner banner;
-  Banner_init(&banner, self);
-  char* string = banner.getString(&banner);
+  Banner* banner = Banner_create(self);
+  char* string = banner->getString(banner);
   printf("%s", string);
   free(string);
+  Banner_destroy(banner);
 }
 void Program_printUsage(Program* self) {
   printf("%s TARGET_IP\n\n", self->binary_name);

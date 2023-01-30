@@ -3,14 +3,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-void Banner_init(Banner* self, Program* program) {
-  self->getString = &Banner_getString;
-  self->setAuthorLine = &Banner_setAuthorLine;
-  self->setNameLine = &Banner_setNameLine;
-  self->setVersionLine = &Banner_setVersionLine;
-  self->setNameLine(self, program->getName(program));
-  self->setVersionLine(self, program->getVersion(program));
-  self->setAuthorLine(self, program->getAuthor(program));
+Banner* Banner_create(Program* program) {
+  Banner* banner = (Banner*) malloc(sizeof(Banner));
+  Banner_init(banner, program);
+  return banner;
+}
+void Banner_init(Banner* banner, Program* program) {
+  banner->getString = &Banner_getString;
+  banner->setAuthorLine = &Banner_setAuthorLine;
+  banner->setNameLine = &Banner_setNameLine;
+  banner->setVersionLine = &Banner_setVersionLine;
+  banner->setNameLine(banner, program->getName(program));
+  banner->setVersionLine(banner, program->getVersion(program));
+  banner->setAuthorLine(banner, program->getAuthor(program));
+}
+void Banner_destroy(Banner* banner) {
+  if (banner) {
+    // Could call a void Banner_reset(Banner* banner)
+    // function here to unset vars used by the object.
+    free(banner);
+  }
 }
 char* Banner_getString(Banner* self) {
   int string_size = BANNER_LINE_SIZE * BANNER_LINE_COUNT;

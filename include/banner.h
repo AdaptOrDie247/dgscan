@@ -12,7 +12,9 @@ typedef struct {
   void (*setNameLine)(void* self, char* name);
   void (*setVersionLine)(void* self, char* version);
 } Banner;
-void Banner_init(Banner* self, Program* program);
+Banner* Banner_create(Program* program);
+void Banner_init(Banner* banner, Program* program);
+void Banner_destroy(Banner* banner);
 char* Banner_getString(Banner* self);
 void Banner_setAuthorLine(Banner* self, char* author);
 void Banner_setNameLine(Banner* self, char* name);
