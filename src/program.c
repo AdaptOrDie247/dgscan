@@ -22,7 +22,7 @@ void Program_init(Program* program) {
 }
 void Program_destroy(Program* program) {
   if (program) {
-    // Could call a void Program_reset(Program* self)
+    // Could call a void Program_reset(Program* program)
     // function here to unset vars used by the object.
     free(program);
   }
