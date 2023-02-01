@@ -5,7 +5,6 @@ typedef struct {
   char binary_name[20];
   char name[50];
   char version[20];
-  char* (*getAuthor)(void* self);
   char* (*getBinaryName)(void* self);
   char* (*getName)(void* self);
   char* (*getVersion)(void* self);
@@ -13,7 +12,7 @@ typedef struct {
 dgscan_program* dgscan_program_new();
 void Program_init(dgscan_program* program);
 void dgscan_program_free(dgscan_program* program);
-char* Program_getAuthor(dgscan_program* self);
+char* dgscan_program_get_author(dgscan_program* self);
 char* Program_getBinaryName(dgscan_program* self);
 char* Program_getName(dgscan_program* self);
 char* Program_getVersion(dgscan_program* self);

@@ -9,7 +9,6 @@ dgscan_program* dgscan_program_new() {
   return program;
 }
 void Program_init(dgscan_program* program) {
-  program->getAuthor = &Program_getAuthor;
   program->getBinaryName = &Program_getBinaryName;
   program->getName = &Program_getName;
   program->getVersion = &Program_getVersion;
@@ -21,7 +20,7 @@ void dgscan_program_free(dgscan_program* program) {
     free(program);
   }
 }
-char* Program_getAuthor(dgscan_program* self) {
+char* dgscan_program_get_author(dgscan_program* self) {
   return self->author;
 }
 char* Program_getBinaryName(dgscan_program* self) {
