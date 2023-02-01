@@ -9,7 +9,6 @@ typedef struct {
   char* (*getBinaryName)(void* self);
   char* (*getName)(void* self);
   char* (*getVersion)(void* self);
-  void (*printUsage)(void* self);
   void (*setAuthor)(void* self, char* author);
   void (*setBinaryName)(void* self, char* binary_name);
   void (*setName)(void* self, char* name);
@@ -23,7 +22,7 @@ char* Program_getBinaryName(dgscan_program* self);
 char* Program_getName(dgscan_program* self);
 char* Program_getVersion(dgscan_program* self);
 void dgscan_program_print_banner(dgscan_program* self);
-void Program_printUsage(dgscan_program* self);
+void dgscan_program_print_usage(dgscan_program* self);
 void Program_setAuthor(dgscan_program* self, char* author);
 void Program_setBinaryName(dgscan_program* self, char* binary_name);
 void Program_setName(dgscan_program* self, char* name);

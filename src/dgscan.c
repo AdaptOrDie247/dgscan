@@ -10,7 +10,7 @@ int main(void) {
   dgscan_program* dgscan = dgscan_program_new();
   dgscan_main_init_program(dgscan);
   dgscan_program_print_banner(dgscan);
-  dgscan->printUsage(dgscan);
+  dgscan_program_print_usage(dgscan);
   dgscan_program_free(dgscan);
   return 0;
 }
