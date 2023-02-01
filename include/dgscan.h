@@ -1,5 +1,5 @@
-#ifndef DG_SCAN
-#define DG_SCAN
+#ifndef DGSCAN
+#define DGSCAN
 #include "program.h"
 void Main_initProgram(Program* program);
 #endif

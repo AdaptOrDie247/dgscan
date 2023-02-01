@@ -1,4 +1,4 @@
-#include "../include/dg-scan.h"
+#include "../include/dgscan.h"
 #include "../include/program.h"
 #include <stdio.h>
 #include <stdlib.h>
