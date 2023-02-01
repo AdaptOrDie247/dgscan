@@ -5,11 +5,7 @@
 #include <string.h>
 dgscan_program* dgscan_program_new() {
   dgscan_program* program = (dgscan_program*) malloc(sizeof(dgscan_program));
-  Program_init(program);
   return program;
-}
-void Program_init(dgscan_program* program) {
-  program->getVersion = &Program_getVersion;
 }
 void dgscan_program_free(dgscan_program* program) {
   if (program) {
@@ -27,7 +23,7 @@ char* dgscan_program_get_binary_name(dgscan_program* self) {
 char* dgscan_program_get_name(dgscan_program* self) {
   return self->name;
 }
-char* Program_getVersion(dgscan_program* self) {
+char* dgscan_program_get_version(dgscan_program* self) {
   return self->version;
 }
 void dgscan_program_print_banner(dgscan_program* self) {

@@ -14,7 +14,7 @@ void Banner_init(Banner* banner, dgscan_program* program) {
   banner->setNameLine = &Banner_setNameLine;
   banner->setVersionLine = &Banner_setVersionLine;
   banner->setNameLine(banner, dgscan_program_get_name(program));
-  banner->setVersionLine(banner, program->getVersion(program));
+  banner->setVersionLine(banner, dgscan_program_get_version(program));
   banner->setAuthorLine(banner, dgscan_program_get_author(program));
 }
 void Banner_destroy(Banner* banner) {
