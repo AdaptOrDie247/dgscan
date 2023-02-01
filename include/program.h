@@ -18,7 +18,7 @@ typedef struct {
 } dgscan_program;
 dgscan_program* dgscan_program_new();
 void Program_init(dgscan_program* program);
-void Program_destroy(dgscan_program* program);
+void dgscan_program_free(dgscan_program* program);
 char* Program_getAuthor(dgscan_program* self);
 char* Program_getBinaryName(dgscan_program* self);
 char* Program_getName(dgscan_program* self);

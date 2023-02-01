@@ -20,7 +20,7 @@ void Program_init(dgscan_program* program) {
   program->setName = &Program_setName;
   program->setVersion = &Program_setVersion;
 }
-void Program_destroy(dgscan_program* program) {
+void dgscan_program_free(dgscan_program* program) {
   if (program) {
     // Could call a void Program_reset(dgscan_program* program)
     // function here to unset vars used by the object.

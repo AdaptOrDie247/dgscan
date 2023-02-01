@@ -11,7 +11,7 @@ int main(void) {
   dgscan_main_init_program(dgscan);
   dgscan->printBanner(dgscan);
   dgscan->printUsage(dgscan);
-  Program_destroy(dgscan);
+  dgscan_program_free(dgscan);
   return 0;
 }
 void dgscan_main_init_program(dgscan_program* program) {
