@@ -2,10 +2,10 @@
 #include "../include/program.h"
 #include <stdio.h>
 #include <stdlib.h>
-#define PROGRAM_AUTHOR "Daniel Gilbert"
-#define PROGRAM_BINARY_NAME "dg-scan"
-#define PROGRAM_NAME "DG Scan"
-#define PROGRAM_VERSION "1.0"
+#define DGSCAN_PROGRAM_AUTHOR "Daniel Gilbert"
+#define DGSCAN_PROGRAM_BINARY_NAME "dg-scan"
+#define DGSCAN_PROGRAM_NAME "DG Scan"
+#define DGSCAN_PROGRAM_VERSION "1.0"
 int main(void) {
   dgscan_program* dgscan = dgscan_program_new();
   dgscan_main_init_program(dgscan);
@@ -15,8 +15,8 @@ int main(void) {
   return 0;
 }
 void dgscan_main_init_program(dgscan_program* program) {
-  dgscan_program_set_author(program, PROGRAM_AUTHOR);
-  dgscan_program_set_binary_name(program, PROGRAM_BINARY_NAME);
-  dgscan_program_set_name(program, PROGRAM_NAME);
-  dgscan_program_set_version(program, PROGRAM_VERSION);
+  dgscan_program_set_author(program, DGSCAN_PROGRAM_AUTHOR);
+  dgscan_program_set_binary_name(program, DGSCAN_PROGRAM_BINARY_NAME);
+  dgscan_program_set_name(program, DGSCAN_PROGRAM_NAME);
+  dgscan_program_set_version(program, DGSCAN_PROGRAM_VERSION);
 }
