@@ -13,7 +13,7 @@ void Banner_init(Banner* banner, dgscan_program* program) {
   banner->setAuthorLine = &Banner_setAuthorLine;
   banner->setNameLine = &Banner_setNameLine;
   banner->setVersionLine = &Banner_setVersionLine;
-  banner->setNameLine(banner, program->getName(program));
+  banner->setNameLine(banner, dgscan_program_get_name(program));
   banner->setVersionLine(banner, program->getVersion(program));
   banner->setAuthorLine(banner, dgscan_program_get_author(program));
 }
