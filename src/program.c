@@ -13,7 +13,6 @@ void Program_init(dgscan_program* program) {
   program->getBinaryName = &Program_getBinaryName;
   program->getName = &Program_getName;
   program->getVersion = &Program_getVersion;
-  program->printBanner = &Program_printBanner;
   program->printUsage = &Program_printUsage;
   program->setAuthor = &Program_setAuthor;
   program->setBinaryName = &Program_setBinaryName;
@@ -39,7 +38,7 @@ char* Program_getName(dgscan_program* self) {
 char* Program_getVersion(dgscan_program* self) {
   return self->version;
 }
-void Program_printBanner(dgscan_program* self) {
+void dgscan_program_print_banner(dgscan_program* self) {
   Banner* banner = Banner_create(self);
   char* string = banner->getString(banner);
   printf("%s", string);
