@@ -5,10 +5,10 @@
 #include <string.h>
 dgscan_banner* dgscan_banner_new(dgscan_program* program) {
   dgscan_banner* banner = (dgscan_banner*) malloc(sizeof(dgscan_banner));
-  Banner_init(banner, program);
+  dgscan_banner_init(banner, program);
   return banner;
 }
-void Banner_init(dgscan_banner* banner, dgscan_program* program) {
+void dgscan_banner_init(dgscan_banner* banner, dgscan_program* program) {
   dgscan_banner_set_name_line(banner, dgscan_program_get_name(program));
   dgscan_banner_set_version_line(banner, dgscan_program_get_version(program));
   dgscan_banner_set_author_line(banner, dgscan_program_get_author(program));
