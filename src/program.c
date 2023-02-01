@@ -13,7 +13,6 @@ void Program_init(dgscan_program* program) {
   program->getBinaryName = &Program_getBinaryName;
   program->getName = &Program_getName;
   program->getVersion = &Program_getVersion;
-  program->setAuthor = &Program_setAuthor;
   program->setBinaryName = &Program_setBinaryName;
   program->setName = &Program_setName;
   program->setVersion = &Program_setVersion;
@@ -47,7 +46,7 @@ void dgscan_program_print_banner(dgscan_program* self) {
 void dgscan_program_print_usage(dgscan_program* self) {
   printf("%s TARGET_IP\n\n", self->binary_name);
 }
-void Program_setAuthor(dgscan_program* self, char* author) {
+void dgscan_program_set_author(dgscan_program* self, char* author) {
   strcpy_s(self->author, sizeof self->author, author);
 }
 void Program_setBinaryName(dgscan_program* self, char* binary_name) {
