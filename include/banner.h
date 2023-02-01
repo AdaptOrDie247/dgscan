@@ -1,12 +1,12 @@
 #ifndef BANNER
 #define BANNER
 #include "program.h"
-#define BANNER_LINE_SIZE 80
-#define BANNER_LINE_COUNT 5
+#define DGSCAN_BANNER_LINE_SIZE 80
+#define DGSCAN_BANNER_LINE_COUNT 5
 typedef struct {
-  char name_line[BANNER_LINE_SIZE];
-  char version_line[BANNER_LINE_SIZE];
-  char author_line[BANNER_LINE_SIZE];
+  char name_line[DGSCAN_BANNER_LINE_SIZE];
+  char version_line[DGSCAN_BANNER_LINE_SIZE];
+  char author_line[DGSCAN_BANNER_LINE_SIZE];
 } dgscan_banner;
 dgscan_banner* dgscan_banner_new(dgscan_program* program);
 void dgscan_banner_init(dgscan_banner* banner, dgscan_program* program);
