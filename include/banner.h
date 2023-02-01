@@ -12,7 +12,7 @@ typedef struct {
   void (*setNameLine)(void* self, char* name);
   void (*setVersionLine)(void* self, char* version);
 } dgscan_banner;
-dgscan_banner* Banner_create(dgscan_program* program);
+dgscan_banner* dgscan_banner_new(dgscan_program* program);
 void Banner_init(dgscan_banner* banner, dgscan_program* program);
 void Banner_destroy(dgscan_banner* banner);
 char* Banner_getString(dgscan_banner* self);

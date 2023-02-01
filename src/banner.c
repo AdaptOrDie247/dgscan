@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-dgscan_banner* Banner_create(dgscan_program* program) {
+dgscan_banner* dgscan_banner_new(dgscan_program* program) {
   dgscan_banner* banner = (dgscan_banner*) malloc(sizeof(dgscan_banner));
   Banner_init(banner, program);
   return banner;
