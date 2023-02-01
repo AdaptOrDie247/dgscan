@@ -1,5 +1,5 @@
 #ifndef DGSCAN
 #define DGSCAN
 #include "program.h"
-void Main_initProgram(Program* program);
+void dgscan_main_init_program(Program* program);
 #endif

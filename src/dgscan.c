@@ -8,13 +8,13 @@
 #define PROGRAM_VERSION "1.0"
 int main(void) {
   Program* dgscan = Program_create();
-  Main_initProgram(dgscan);
+  dgscan_main_init_program(dgscan);
   dgscan->printBanner(dgscan);
   dgscan->printUsage(dgscan);
   Program_destroy(dgscan);
   return 0;
 }
-void Main_initProgram(Program* program) {
+void dgscan_main_init_program(Program* program) {
   program->setAuthor(program, PROGRAM_AUTHOR);
   program->setBinaryName(program, PROGRAM_BINARY_NAME);
   program->setName(program, PROGRAM_NAME);
