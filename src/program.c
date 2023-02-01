@@ -13,7 +13,6 @@ void Program_init(dgscan_program* program) {
   program->getBinaryName = &Program_getBinaryName;
   program->getName = &Program_getName;
   program->getVersion = &Program_getVersion;
-  program->setBinaryName = &Program_setBinaryName;
   program->setName = &Program_setName;
   program->setVersion = &Program_setVersion;
 }
@@ -49,7 +48,7 @@ void dgscan_program_print_usage(dgscan_program* self) {
 void dgscan_program_set_author(dgscan_program* self, char* author) {
   strcpy_s(self->author, sizeof self->author, author);
 }
-void Program_setBinaryName(dgscan_program* self, char* binary_name) {
+void dgscan_program_set_binary_name(dgscan_program* self, char* binary_name) {
   strcpy_s(self->binary_name, sizeof self->binary_name, binary_name);
 }
 void Program_setName(dgscan_program* self, char* name) {

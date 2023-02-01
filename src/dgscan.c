@@ -16,7 +16,7 @@ int main(void) {
 }
 void dgscan_main_init_program(dgscan_program* program) {
   dgscan_program_set_author(program, PROGRAM_AUTHOR);
-  program->setBinaryName(program, PROGRAM_BINARY_NAME);
+  dgscan_program_set_binary_name(program, PROGRAM_BINARY_NAME);
   program->setName(program, PROGRAM_NAME);
   program->setVersion(program, PROGRAM_VERSION);
 }
