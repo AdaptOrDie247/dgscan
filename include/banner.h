@@ -14,7 +14,7 @@ typedef struct {
 } dgscan_banner;
 dgscan_banner* dgscan_banner_new(dgscan_program* program);
 void Banner_init(dgscan_banner* banner, dgscan_program* program);
-void Banner_destroy(dgscan_banner* banner);
+void dgscan_banner_free(dgscan_banner* banner);
 char* Banner_getString(dgscan_banner* self);
 void Banner_setAuthorLine(dgscan_banner* self, char* author);
 void Banner_setNameLine(dgscan_banner* self, char* name);

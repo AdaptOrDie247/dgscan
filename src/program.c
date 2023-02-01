@@ -31,7 +31,7 @@ void dgscan_program_print_banner(dgscan_program* self) {
   char* string = banner->getString(banner);
   printf("%s", string);
   free(string);
-  Banner_destroy(banner);
+  dgscan_banner_free(banner);
 }
 void dgscan_program_print_usage(dgscan_program* self) {
   printf("%s TARGET_IP\n\n", self->binary_name);

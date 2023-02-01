@@ -17,7 +17,7 @@ void Banner_init(dgscan_banner* banner, dgscan_program* program) {
   banner->setVersionLine(banner, dgscan_program_get_version(program));
   banner->setAuthorLine(banner, dgscan_program_get_author(program));
 }
-void Banner_destroy(dgscan_banner* banner) {
+void dgscan_banner_free(dgscan_banner* banner) {
   if (banner) {
     // Could call a void Banner_reset(dgscan_banner* banner)
     // function here to unset vars used by the object.
