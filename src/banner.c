@@ -10,9 +10,8 @@ dgscan_banner* dgscan_banner_new(dgscan_program* program) {
 }
 void Banner_init(dgscan_banner* banner, dgscan_program* program) {
   banner->setAuthorLine = &Banner_setAuthorLine;
-  banner->setNameLine = &Banner_setNameLine;
   banner->setVersionLine = &Banner_setVersionLine;
-  banner->setNameLine(banner, dgscan_program_get_name(program));
+  dgscan_banner_set_name_line(banner, dgscan_program_get_name(program));
   banner->setVersionLine(banner, dgscan_program_get_version(program));
   banner->setAuthorLine(banner, dgscan_program_get_author(program));
 }
@@ -36,7 +35,7 @@ char* dgscan_banner_get_string(dgscan_banner* self) {
 void Banner_setAuthorLine(dgscan_banner* self, char* author) {
   snprintf(self->author_line, sizeof self->author_line, "Author: %s\n", author);
 }
-void Banner_setNameLine(dgscan_banner* self, char* name) {
+void dgscan_banner_set_name_line(dgscan_banner* self, char* name) {
   snprintf(self->name_line, sizeof self->name_line, "%s\n", name);
 }
 void Banner_setVersionLine(dgscan_banner* self, char* version) {
