@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-dgscan_program* Program_create() {
+dgscan_program* dgscan_program_new() {
   dgscan_program* program = (dgscan_program*) malloc(sizeof(dgscan_program));
   Program_init(program);
   return program;

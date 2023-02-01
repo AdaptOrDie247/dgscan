@@ -7,7 +7,7 @@
 #define PROGRAM_NAME "DG Scan"
 #define PROGRAM_VERSION "1.0"
 int main(void) {
-  dgscan_program* dgscan = Program_create();
+  dgscan_program* dgscan = dgscan_program_new();
   dgscan_main_init_program(dgscan);
   dgscan->printBanner(dgscan);
   dgscan->printUsage(dgscan);

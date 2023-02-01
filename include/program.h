@@ -16,7 +16,7 @@ typedef struct {
   void (*setName)(void* self, char* name);
   void (*setVersion)(void* self, char* version);
 } dgscan_program;
-dgscan_program* Program_create();
+dgscan_program* dgscan_program_new();
 void Program_init(dgscan_program* program);
 void Program_destroy(dgscan_program* program);
 char* Program_getAuthor(dgscan_program* self);
