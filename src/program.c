@@ -28,7 +28,7 @@ char* dgscan_program_get_version(dgscan_program* self) {
 }
 void dgscan_program_print_banner(dgscan_program* self) {
   dgscan_banner* banner = dgscan_banner_new(self);
-  char* string = banner->getString(banner);
+  char* string = dgscan_banner_get_string(banner);
   printf("%s", string);
   free(string);
   dgscan_banner_free(banner);

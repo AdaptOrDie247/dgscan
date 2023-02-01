@@ -9,7 +9,6 @@ dgscan_banner* dgscan_banner_new(dgscan_program* program) {
   return banner;
 }
 void Banner_init(dgscan_banner* banner, dgscan_program* program) {
-  banner->getString = &Banner_getString;
   banner->setAuthorLine = &Banner_setAuthorLine;
   banner->setNameLine = &Banner_setNameLine;
   banner->setVersionLine = &Banner_setVersionLine;
@@ -24,7 +23,7 @@ void dgscan_banner_free(dgscan_banner* banner) {
     free(banner);
   }
 }
-char* Banner_getString(dgscan_banner* self) {
+char* dgscan_banner_get_string(dgscan_banner* self) {
   int string_size = BANNER_LINE_SIZE * BANNER_LINE_COUNT;
   char* string = malloc(string_size);
   strncpy_s(string, string_size, "\n", BANNER_LINE_SIZE);
