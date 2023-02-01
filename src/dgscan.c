@@ -7,11 +7,11 @@
 #define PROGRAM_NAME "DG Scan"
 #define PROGRAM_VERSION "1.0"
 int main(void) {
-  Program* dg_scan = Program_create();
-  Main_initProgram(dg_scan);
-  dg_scan->printBanner(dg_scan);
-  dg_scan->printUsage(dg_scan);
-  Program_destroy(dg_scan);
+  Program* dgscan = Program_create();
+  Main_initProgram(dgscan);
+  dgscan->printBanner(dgscan);
+  dgscan->printUsage(dgscan);
+  Program_destroy(dgscan);
   return 0;
 }
 void Main_initProgram(Program* program) {
