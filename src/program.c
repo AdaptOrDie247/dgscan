@@ -3,12 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-Program* Program_create() {
-  Program* program = (Program*) malloc(sizeof(Program));
+dgscan_program* Program_create() {
+  dgscan_program* program = (dgscan_program*) malloc(sizeof(dgscan_program));
   Program_init(program);
   return program;
 }
-void Program_init(Program* program) {
+void Program_init(dgscan_program* program) {
   program->getAuthor = &Program_getAuthor;
   program->getBinaryName = &Program_getBinaryName;
   program->getName = &Program_getName;
@@ -20,44 +20,44 @@ void Program_init(Program* program) {
   program->setName = &Program_setName;
   program->setVersion = &Program_setVersion;
 }
-void Program_destroy(Program* program) {
+void Program_destroy(dgscan_program* program) {
   if (program) {
-    // Could call a void Program_reset(Program* program)
+    // Could call a void Program_reset(dgscan_program* program)
     // function here to unset vars used by the object.
     free(program);
   }
 }
-char* Program_getAuthor(Program* self) {
+char* Program_getAuthor(dgscan_program* self) {
   return self->author;
 }
-char* Program_getBinaryName(Program* self) {
+char* Program_getBinaryName(dgscan_program* self) {
   return self->binary_name;
 }
-char* Program_getName(Program* self) {
+char* Program_getName(dgscan_program* self) {
   return self->name;
 }
-char* Program_getVersion(Program* self) {
+char* Program_getVersion(dgscan_program* self) {
   return self->version;
 }
-void Program_printBanner(Program* self) {
+void Program_printBanner(dgscan_program* self) {
   Banner* banner = Banner_create(self);
   char* string = banner->getString(banner);
   printf("%s", string);
   free(string);
   Banner_destroy(banner);
 }
-void Program_printUsage(Program* self) {
+void Program_printUsage(dgscan_program* self) {
   printf("%s TARGET_IP\n\n", self->binary_name);
 }
-void Program_setAuthor(Program* self, char* author) {
+void Program_setAuthor(dgscan_program* self, char* author) {
   strcpy_s(self->author, sizeof self->author, author);
 }
-void Program_setBinaryName(Program* self, char* binary_name) {
+void Program_setBinaryName(dgscan_program* self, char* binary_name) {
   strcpy_s(self->binary_name, sizeof self->binary_name, binary_name);
 }
-void Program_setName(Program* self, char* name) {
+void Program_setName(dgscan_program* self, char* name) {
   strcpy_s(self->name, sizeof self->name, name);
 }
-void Program_setVersion(Program* self, char* version) {
+void Program_setVersion(dgscan_program* self, char* version) {
   strcpy_s(self->version, sizeof self->version, version);
 }

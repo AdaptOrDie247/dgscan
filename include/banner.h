@@ -12,8 +12,8 @@ typedef struct {
   void (*setNameLine)(void* self, char* name);
   void (*setVersionLine)(void* self, char* version);
 } Banner;
-Banner* Banner_create(Program* program);
-void Banner_init(Banner* banner, Program* program);
+Banner* Banner_create(dgscan_program* program);
+void Banner_init(Banner* banner, dgscan_program* program);
 void Banner_destroy(Banner* banner);
 char* Banner_getString(Banner* self);
 void Banner_setAuthorLine(Banner* self, char* author);

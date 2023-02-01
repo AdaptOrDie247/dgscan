@@ -3,12 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-Banner* Banner_create(Program* program) {
+Banner* Banner_create(dgscan_program* program) {
   Banner* banner = (Banner*) malloc(sizeof(Banner));
   Banner_init(banner, program);
   return banner;
 }
-void Banner_init(Banner* banner, Program* program) {
+void Banner_init(Banner* banner, dgscan_program* program) {
   banner->getString = &Banner_getString;
   banner->setAuthorLine = &Banner_setAuthorLine;
   banner->setNameLine = &Banner_setNameLine;
