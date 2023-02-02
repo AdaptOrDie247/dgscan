@@ -11,8 +11,6 @@ dgscan_program* dgscan_program_new() {
 
 void dgscan_program_free(dgscan_program* program) {
   if (program) {
-    // Could call a void Program_reset(dgscan_program* program)
-    // function here to unset vars used by the object.
     free(program);
   }
 }

@@ -18,8 +18,6 @@ void dgscan_banner_init(dgscan_banner* banner, dgscan_program* program) {
 
 void dgscan_banner_free(dgscan_banner* banner) {
   if (banner) {
-    // Could call a void Banner_reset(dgscan_banner* banner)
-    // function here to unset vars used by the object.
     free(banner);
   }
 }
