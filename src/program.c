@@ -4,11 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-dgscan_program* dgscan_program_new() {
-  dgscan_program* program = (dgscan_program*) malloc(sizeof(dgscan_program));
-  return program;
-}
-
 void dgscan_program_free(dgscan_program* program) {
   if (program) {
     free(program);
@@ -29,6 +24,11 @@ char* dgscan_program_get_name(dgscan_program* self) {
 
 char* dgscan_program_get_version(dgscan_program* self) {
   return self->version;
+}
+
+dgscan_program* dgscan_program_new() {
+  dgscan_program* program = (dgscan_program*) malloc(sizeof(dgscan_program));
+  return program;
 }
 
 void dgscan_program_print_banner(dgscan_program* self) {
