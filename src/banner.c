@@ -10,13 +10,13 @@ void dgscan_banner_free(dgscan_banner* banner) {
   }
 }
 
-char* dgscan_banner_get_string(dgscan_banner* self) {
+char* dgscan_banner_get_string(dgscan_banner* banner) {
   int string_size = DGSCAN_BANNER_LINE_SIZE * DGSCAN_BANNER_LINE_COUNT;
   char* string = malloc(string_size);
   strncpy_s(string, string_size, "\n", DGSCAN_BANNER_LINE_SIZE);
-  strncat_s(string, string_size, self->name_line, DGSCAN_BANNER_LINE_SIZE);
-  strncat_s(string, string_size, self->version_line, DGSCAN_BANNER_LINE_SIZE);
-  strncat_s(string, string_size, self->author_line, DGSCAN_BANNER_LINE_SIZE);
+  strncat_s(string, string_size, banner->name_line, DGSCAN_BANNER_LINE_SIZE);
+  strncat_s(string, string_size, banner->version_line, DGSCAN_BANNER_LINE_SIZE);
+  strncat_s(string, string_size, banner->author_line, DGSCAN_BANNER_LINE_SIZE);
   strncat_s(string, string_size, "\n", DGSCAN_BANNER_LINE_SIZE);
   return string;
 }
@@ -33,14 +33,14 @@ dgscan_banner* dgscan_banner_new(dgscan_program* program) {
   return banner;
 }
 
-void dgscan_banner_set_author_line(dgscan_banner* self, char* author) {
-  snprintf(self->author_line, sizeof self->author_line, "Author: %s\n", author);
+void dgscan_banner_set_author_line(dgscan_banner* banner, char* author) {
+  snprintf(banner->author_line, sizeof banner->author_line, "Author: %s\n", author);
 }
 
-void dgscan_banner_set_name_line(dgscan_banner* self, char* name) {
-  snprintf(self->name_line, sizeof self->name_line, "%s\n", name);
+void dgscan_banner_set_name_line(dgscan_banner* banner, char* name) {
+  snprintf(banner->name_line, sizeof banner->name_line, "%s\n", name);
 }
 
-void dgscan_banner_set_version_line(dgscan_banner* self, char* version) {
-  snprintf(self->version_line, sizeof self->version_line, "Version: %s\n", version);
+void dgscan_banner_set_version_line(dgscan_banner* banner, char* version) {
+  snprintf(banner->version_line, sizeof banner->version_line, "Version: %s\n", version);
 }

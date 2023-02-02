@@ -13,11 +13,11 @@ typedef struct {
 } dgscan_banner;
 
 void dgscan_banner_free(dgscan_banner* banner);
-char* dgscan_banner_get_string(dgscan_banner* self);
+char* dgscan_banner_get_string(dgscan_banner* banner);
 void dgscan_banner_init(dgscan_banner* banner, dgscan_program* program);
 dgscan_banner* dgscan_banner_new(dgscan_program* program);
-void dgscan_banner_set_author_line(dgscan_banner* self, char* author);
-void dgscan_banner_set_name_line(dgscan_banner* self, char* name);
-void dgscan_banner_set_version_line(dgscan_banner* self, char* version);
+void dgscan_banner_set_author_line(dgscan_banner* banner, char* author);
+void dgscan_banner_set_name_line(dgscan_banner* banner, char* name);
+void dgscan_banner_set_version_line(dgscan_banner* banner, char* version);
 
 #endif
