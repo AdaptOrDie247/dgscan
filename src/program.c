@@ -44,17 +44,17 @@ void dgscan_program_print_usage(dgscan_program* program) {
 }
 
 void dgscan_program_set_author(dgscan_program* program, char* author) {
-  strcpy_s(program->author, sizeof program->author, author);
+  strncpy_s(program->author, sizeof program->author, author, sizeof program->author - 1);
 }
 
 void dgscan_program_set_binary_name(dgscan_program* program, char* binary_name) {
-  strcpy_s(program->binary_name, sizeof program->binary_name, binary_name);
+  strncpy_s(program->binary_name, sizeof program->binary_name, binary_name, sizeof program->binary_name - 1);
 }
 
 void dgscan_program_set_name(dgscan_program* program, char* name) {
-  strcpy_s(program->name, sizeof program->name, name);
+  strncpy_s(program->name, sizeof program->name, name, sizeof program->name - 1);
 }
 
 void dgscan_program_set_version(dgscan_program* program, char* version) {
-  strcpy_s(program->version, sizeof program->version, version);
+  strncpy_s(program->version, sizeof program->version, version, sizeof program->version - 1);
 }
