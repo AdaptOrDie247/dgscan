@@ -1,5 +1,5 @@
-#ifndef PROGRAM
-#define PROGRAM
+#ifndef DGSCAN_PROGRAM_H
+#define DGSCAN_PROGRAM_H
 
 typedef struct {
   char author[40];

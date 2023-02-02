@@ -1,5 +1,5 @@
-#ifndef BANNER
-#define BANNER
+#ifndef DGSCAN_BANNER_H
+#define DGSCAN_BANNER_H
 
 #include "program.h"
 
