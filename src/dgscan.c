@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define DGSCAN_PROGRAM_AUTHOR "Daniel Gilbert"
-#define DGSCAN_PROGRAM_BINARY_NAME "dg-scan"
+#define DGSCAN_PROGRAM_BINARY_NAME "dgscan"
 #define DGSCAN_PROGRAM_NAME "DG Scan"
 #define DGSCAN_PROGRAM_VERSION "1.0"
 int main(void) {
