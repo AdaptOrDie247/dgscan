@@ -27,7 +27,7 @@ char* dgscan_program_get_version(dgscan_program* program) {
 }
 
 dgscan_program* dgscan_program_new() {
-  dgscan_program* program = (dgscan_program*) malloc(sizeof(dgscan_program));
+  dgscan_program* program = malloc(sizeof(dgscan_program));
   return program;
 }
 
