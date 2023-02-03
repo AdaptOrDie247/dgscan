@@ -28,6 +28,10 @@ char* dgscan_program_get_version(dgscan_program* program) {
 
 dgscan_program* dgscan_program_new() {
   dgscan_program* program = malloc(sizeof(dgscan_program));
+  strncpy_s(program->name, sizeof program->name, "", sizeof program->name - 1);
+  strncpy_s(program->author, sizeof program->author, "", sizeof program->author - 1);
+  strncpy_s(program->version, sizeof program->version, "", sizeof program->version - 1);
+  strncpy_s(program->binary_name, sizeof program->binary_name, "", sizeof program->binary_name - 1);
   return program;
 }
 
