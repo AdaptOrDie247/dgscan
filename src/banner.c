@@ -28,7 +28,7 @@ void dgscan_banner_init(dgscan_banner* banner, dgscan_program* program) {
 }
 
 dgscan_banner* dgscan_banner_new(dgscan_program* program) {
-  dgscan_banner* banner = (dgscan_banner*) malloc(sizeof(dgscan_banner));
+  dgscan_banner* banner = malloc(sizeof(dgscan_banner));
   dgscan_banner_init(banner, program);
   return banner;
 }
