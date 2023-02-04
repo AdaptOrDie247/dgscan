@@ -22,6 +22,13 @@ char* dgscan_program_get_name(dgscan_program* program) {
   return program->name;
 }
 
+char* dgscan_program_get_usage(dgscan_program* program) {
+  int usage_size = 300;
+  char* usage = malloc(usage_size);
+  snprintf(usage, usage_size, "%s TARGET_IP\n\n", program->binary_name);
+  return usage;
+}
+
 char* dgscan_program_get_version(dgscan_program* program) {
   return program->version;
 }
@@ -41,10 +48,6 @@ void dgscan_program_print_banner(dgscan_program* program) {
   printf("%s", string);
   free(string);
   dgscan_banner_free(banner);
-}
-
-void dgscan_program_print_usage(dgscan_program* program) {
-  printf("%s TARGET_IP\n\n", program->binary_name);
 }
 
 void dgscan_program_set_author(dgscan_program* program, char* author) {
