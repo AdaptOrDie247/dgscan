@@ -11,7 +11,7 @@
 int main(void) {
   dgscan_program* dgscan = dgscan_program_new();
   dgscan_main_init_program(dgscan);
-  dgscan_program_print_banner(dgscan);
+  dgscan_main_print_banner(dgscan);
   dgscan_main_print_usage(dgscan);
   dgscan_program_free(dgscan);
   return 0;
@@ -22,6 +22,12 @@ void dgscan_main_init_program(dgscan_program* program) {
   dgscan_program_set_binary_name(program, DGSCAN_PROGRAM_BINARY_NAME);
   dgscan_program_set_name(program, DGSCAN_PROGRAM_NAME);
   dgscan_program_set_version(program, DGSCAN_PROGRAM_VERSION);
+}
+
+void dgscan_main_print_banner(dgscan_program* program) {
+  char* banner = dgscan_program_get_banner(program);
+  printf("%s", banner);
+  free(banner);
 }
 
 void dgscan_main_print_usage(dgscan_program* program) {

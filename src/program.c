@@ -14,6 +14,13 @@ char* dgscan_program_get_author(dgscan_program* program) {
   return program->author;
 }
 
+char* dgscan_program_get_banner(dgscan_program* program) {
+  dgscan_banner* banner = dgscan_banner_new(program);
+  char* string = dgscan_banner_get_string(banner);
+  dgscan_banner_free(banner);
+  return string;
+}
+
 char* dgscan_program_get_binary_name(dgscan_program* program) {
   return program->binary_name;
 }
@@ -40,14 +47,6 @@ dgscan_program* dgscan_program_new() {
   strncpy_s(program->version, sizeof program->version, "", sizeof program->version - 1);
   strncpy_s(program->binary_name, sizeof program->binary_name, "", sizeof program->binary_name - 1);
   return program;
-}
-
-void dgscan_program_print_banner(dgscan_program* program) {
-  dgscan_banner* banner = dgscan_banner_new(program);
-  char* string = dgscan_banner_get_string(banner);
-  printf("%s", string);
-  free(string);
-  dgscan_banner_free(banner);
 }
 
 void dgscan_program_set_author(dgscan_program* program, char* author) {

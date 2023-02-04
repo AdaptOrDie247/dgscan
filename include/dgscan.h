@@ -4,6 +4,7 @@
 #include "program.h"
 
 void dgscan_main_init_program(dgscan_program* program);
+void dgscan_main_print_banner(dgscan_program* program);
 void dgscan_main_print_usage(dgscan_program* program);
 
 #endif
