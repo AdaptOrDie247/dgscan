@@ -13,11 +13,11 @@ void dgscan_banner_free(dgscan_banner* banner) {
 char* dgscan_banner_get_string(dgscan_banner* banner) {
   int string_size = DGSCAN_BANNER_LINE_SIZE * DGSCAN_BANNER_LINE_COUNT;
   char* string = malloc(string_size);
-  strncpy_s(string, string_size, "\n", DGSCAN_BANNER_LINE_SIZE - 1);
-  strncat_s(string, string_size, banner->name_line, DGSCAN_BANNER_LINE_SIZE - 1);
-  strncat_s(string, string_size, banner->version_line, DGSCAN_BANNER_LINE_SIZE - 1);
-  strncat_s(string, string_size, banner->author_line, DGSCAN_BANNER_LINE_SIZE - 1);
-  strncat_s(string, string_size, "\n", DGSCAN_BANNER_LINE_SIZE - 1);
+  strncpy(string, "\n", DGSCAN_BANNER_LINE_SIZE - 1);
+  strncat(string, banner->name_line, DGSCAN_BANNER_LINE_SIZE - 1);
+  strncat(string, banner->version_line, DGSCAN_BANNER_LINE_SIZE - 1);
+  strncat(string, banner->author_line, DGSCAN_BANNER_LINE_SIZE - 1);
+  strncat(string, "\n", DGSCAN_BANNER_LINE_SIZE - 1);
   return string;
 }
 

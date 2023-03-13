@@ -42,25 +42,25 @@ char* dgscan_program_get_version(dgscan_program* program) {
 
 dgscan_program* dgscan_program_new() {
   dgscan_program* program = malloc(sizeof(dgscan_program));
-  strncpy_s(program->name, sizeof program->name, "", sizeof program->name - 1);
-  strncpy_s(program->author, sizeof program->author, "", sizeof program->author - 1);
-  strncpy_s(program->version, sizeof program->version, "", sizeof program->version - 1);
-  strncpy_s(program->binary_name, sizeof program->binary_name, "", sizeof program->binary_name - 1);
+  strncpy(program->name, "", sizeof program->name - 1);
+  strncpy(program->author, "", sizeof program->author - 1);
+  strncpy(program->version, "", sizeof program->version - 1);
+  strncpy(program->binary_name, "", sizeof program->binary_name - 1);
   return program;
 }
 
 void dgscan_program_set_author(dgscan_program* program, char* author) {
-  strncpy_s(program->author, sizeof program->author, author, sizeof program->author - 1);
+  strncpy(program->author, author, sizeof program->author - 1);
 }
 
 void dgscan_program_set_binary_name(dgscan_program* program, char* binary_name) {
-  strncpy_s(program->binary_name, sizeof program->binary_name, binary_name, sizeof program->binary_name - 1);
+  strncpy(program->binary_name, binary_name, sizeof program->binary_name - 1);
 }
 
 void dgscan_program_set_name(dgscan_program* program, char* name) {
-  strncpy_s(program->name, sizeof program->name, name, sizeof program->name - 1);
+  strncpy(program->name, name, sizeof program->name - 1);
 }
 
 void dgscan_program_set_version(dgscan_program* program, char* version) {
-  strncpy_s(program->version, sizeof program->version, version, sizeof program->version - 1);
+  strncpy(program->version, version, sizeof program->version - 1);
 }
