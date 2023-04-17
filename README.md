@@ -6,7 +6,7 @@ A port scanner written in C.
 
 ## Notes
 
-- My ultimate goal is to learn Intel assembly.
+- Began project in order to ultimately learn Intel assembly.
 - A resource for learning Intel assembly specified being "comfortable with C" as a requirement.
 - Already knowing C++, I decided to write a port scanner in C to become more familiar with the language.
 - After writing some C code for this project, I realized that I am probably already sufficiently prepared to learn Intel assembly.
